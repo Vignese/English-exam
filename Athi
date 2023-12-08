@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 11 English Exam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        .question {
+            margin-bottom: 15px;
+        }
+
+        #results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Grade 11 English Exam</h1>
+
+    <div class="question">
+        <p><strong>Question 1:</strong> What is the capital of France?</p>
+        <input type="text" name="q1_answer" placeholder="Your answer">
+    </div>
+
+    <div class="question">
+        <p><strong>Question 2:</strong> Define the term "metaphor" in your own words.</p>
+        <textarea name="q2_answer" rows="4" cols="50" placeholder="Your answer"></textarea>
+    </div>
+
+    <!-- Add more questions as needed -->
+
+    <input type="submit" value="Submit Exam" onclick="showResults()">
+
+    <div id="results" style="display:none;">
+        <h2>Results</h2>
+        <p id="score">Score: </p>
+        <p id="feedback">Feedback: </p>
+    </div>
+
+    <script>
+        function showResults() {
+            // You would need JavaScript to calculate and display results based on submitted answers
+            // For simplicity, let's assume a basic scoring mechanism here
+
+            let score = 0;
+
+            // Example scoring logic (modify based on your actual questions and correct answers)
+            const q1Answer = document.querySelector('input[name="q1_answer"]').value.trim().toLowerCase();
+            if (q1Answer === 'paris') {
+                score += 1;
+            }
+
+            const q2Answer = document.querySelector('textarea[name="q2_answer"]').value.trim().toLowerCase();
+            if (q2Answer.includes('figure of speech')) {
+                score += 1;
+            }
+
+            // Display results
+            document.getElementById('score').textContent = `Score: ${score} / 2`; // Modify '2' based on the total number of questions
+            document.getElementById('feedback').textContent = score >= 1 ? 'Well done!' : 'Study more for better results.';
+
+            // Show results container
+            document.getElementById('results').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
